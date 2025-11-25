@@ -5,56 +5,56 @@ const products = [
         name: "Zapatillas Running Nike Air Max",
         price: 129.99,
         category: "zapatillas",
-        image: "https://via.placeholder.com/300x200/3498db/ffffff?text=Zapatillas+Nike"
+        image: "./img/NikeAirMax.png"
     },
     {
         id: 2,
         name: "Camiseta Deportiva Adidas",
         price: 34.99,
         category: "ropa",
-        image: "https://via.placeholder.com/300x200/e74c3c/ffffff?text=Camiseta+Adidas"
+        image: "./img/camiseta-adidas.png"
     },
     {
         id: 3,
         name: "Balón de Fútbol Professional",
         price: 49.99,
         category: "equipamiento",
-        image: "https://via.placeholder.com/300x200/2ecc71/ffffff?text=Balón+Fútbol"
+        image: "./img/balonfutbol.png"
     },
     {
         id: 4,
         name: "Raqueta de Tenis Wilson",
         price: 89.99,
         category: "equipamiento",
-        image: "https://via.placeholder.com/300x200/9b59b6/ffffff?text=Raqueta+Tenis"
+        image: "./img/raqueta.png"
     },
     {
         id: 5,
         name: "Short Deportivo Nike Dri-FIT",
         price: 29.99,
         category: "ropa",
-        image: "https://via.placeholder.com/300x200/f39c12/ffffff?text=Short+Nike"
+        image: "./img/short.png"
     },
     {
         id: 6,
         name: "Zapatillas Basketball Jordan",
         price: 159.99,
         category: "zapatillas",
-        image: "https://via.placeholder.com/300x200/34495e/ffffff?text=Zapatillas+Jordan"
+        image: "./img/zapatillajordan.png"
     },
     {
         id: 7,
         name: "Pelota de Baloncesto Spalding",
         price: 39.99,
         category: "equipamiento",
-        image: "https://via.placeholder.com/300x200/e67e22/ffffff?text=Pelota+Baloncesto"
+        image: "./img/spalding.png"
     },
     {
         id: 8,
         name: "Sudadera con Capucha Under Armour",
         price: 59.99,
         category: "ropa",
-        image: "https://via.placeholder.com/300x200/16a085/ffffff?text=Sudadera+UA"
+        image: "./img/sudadera.png"
     }
 ];
 
