@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportPro - Carrito de Compras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cart-header">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">SPORTPRO</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#products" class="nav-link">Productos</a>
+                    <a href="cart.html" class="nav-link cart-link active">
+                        <span class="cart-icon">🛒</span>
+                        Carrito 
+                        <span class="cart-count" id="header-cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cart-main">
+        <div class="container">
+            <div class="cart-page-header">
+                <h1>TU CARRITO DE COMPRAS</h1>
+                <p>Revisa y confirma tu pedido deportivo</p>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-items-section">
+                    <div class="section-header">
+                        <h2>Productos Seleccionados</h2>
+                        <div class="items-count" id="items-count">0 items</div>
+                    </div>
+                    
+                    <div class="cart-items" id="cart-items">
+                        <div class="empty-cart">
+                            <div class="empty-cart-icon">🛒</div>
+                            <h3>Tu carrito está vacío</h3>
+                            <p>Agrega algunos productos deportivos a tu carrito.</p>
+                            <a href="index.html" class="cta-button">
+                                <span>Explorar Productos</span>
+                                <div class="button-arrow">→</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3>RESUMEN DEL PEDIDO</h3>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Envío:</span>
+                                <span id="shipping">$0.00</span>
+                            </div>
+                            <div class="summary-row discount">
+                                <span>Descuento:</span>
+                                <span id="discount">-$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>TOTAL:</span>
+                                <span id="total">$0.00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="promo-section">
+                            <input type="text" id="promo-code" placeholder="Código promocional">
+                            <button id="apply-promo" class="promo-btn">Aplicar</button>
+                        </div>
+                    </div>
+                    
+                    <div class="customer-info-card">
+                        <h3>INFORMACIÓN DEL CLIENTE</h3>
+                        <form id="customer-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Nombre completo *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Teléfono *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="address">Dirección de envío *</label>
+                                    <textarea id="address" name="address" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="notes">Notas adicionales</label>
+                                    <textarea id="notes" name="notes" rows="2" placeholder="Instrucciones especiales para la entrega..."></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <button class="checkout-btn" id="checkout-btn" disabled>
+                        <span>CONFIRMAR PEDIDO</span>
+                        <div class="btn-loading hidden"></div>
+                    </button>
+                    <a href="index.html" class="continue-shopping">
+                        ← Seguir comprando
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popup de agradecimiento (OCULTO INICIALMENTE) -->
+    <div id="thank-you-popup" class="popup-overlay hidden">
+        <div class="popup-content">
+            <div class="popup-icon">🎉</div>
+            <h2>¡PEDIDO CONFIRMADO!</h2>
+            <p class="success-message">Gracias por tu compra en SportPro</p>
+            <p class="order-reference">Número de pedido: <strong id="popup-order-id">SP-123456</strong></p>
+            <div class="popup-details">
+                <p>📧 Te hemos enviado un correo de confirmación</p>
+                <p>🚚 Tu pedido llegará en 2-3 días hábiles</p>
+            </div>
+            <button id="close-popup" class="close-popup-btn">CONTINUAR</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">SPORTPRO</span>
+                    </div>
+                    <p class="footer-description">Tu destino premium para equipamiento deportivo de alta calidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="index.html#products">Productos</a>
+                    <a href="cart.html">Carrito</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📧 info@sportpro.com</p>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📍 123 Sports Ave, Ciudad</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SportPro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
